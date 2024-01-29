@@ -45,9 +45,10 @@ namespace Student_Information_System
 
         private void tbx_AddData_Click(object sender, RoutedEventArgs e)
         {
-            //database connection here
-            StudentDetail newStudent = db.StudentDetails
-
+            StudentDetail NewStudent = new StudentDetail
+            {
+                
+            };
             
         }
     }

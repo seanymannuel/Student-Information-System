@@ -5,48 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Student_Information_System"
         mc:Ignorable="d"
-        Title="Registration" Height="558" Width="800">
+        Title="Additional Details" Height="558" Width="800">
     <Grid Margin="0,0,0,-6" RenderTransformOrigin="0.738,0.059">
-        <Label Content="Student Registration Form" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Width="240" FontFamily="Candara" FontSize="20" FontWeight="Bold"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="24,75,0,0" VerticalAlignment="Top" Width="100" FontFamily="Candara" FontSize="14" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Margin="27,105,0,0" TextWrapping="Wrap" Text="Mother's Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="27,129,0,0" TextWrapping="Wrap" Text="Father's Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="298,105,0,0" TextWrapping="Wrap" Text="Occupation:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="298,131,0,0" TextWrapping="Wrap" Text="Occupation:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="546,105,0,0" TextWrapping="Wrap" Text="Contact Number:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="546,133,0,0" TextWrapping="Wrap" Text="Contact Number:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <Label Content="SIBLINGS DATA" HorizontalAlignment="Left" Margin="24,162,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold"/>
-        <Label Content="FAMILY DATA" HorizontalAlignment="Left" Margin="24,73,0,0" VerticalAlignment="Top" Width="100" FontFamily="Candara" FontSize="14" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Margin="27,190,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="297,190,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="546,192,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="28,216,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <Label Content="PERSON TO BE NOTIFIED IN CASE OF EMERGENCY" HorizontalAlignment="Left" Margin="24,285,0,0" VerticalAlignment="Top" Width="310" FontFamily="Candara" FontSize="14" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Margin="297,218,0,0" TextWrapping="Wrap" Text="Occupation:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="27,318,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="297,318,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="26,342,0,0" TextWrapping="Wrap" Text="Relationship:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <TextBox HorizontalAlignment="Left" Margin="297,342,0,0" TextWrapping="Wrap" Text="Contact Number:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="342,425,0,0" VerticalAlignment="Top" Width="136" Height="38"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="130,100,0,0" VerticalAlignment="Top" Width="151" Foreground="{x:Null}" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="151" Foreground="{x:Null}" Background="#FFE2E2E2"/>
-        <Label x:Name="lbl_FirstName_Copy" Content="" HorizontalAlignment="Left" Margin="404,100,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label x:Name="lbl_FirstName_Copy1" Content="" HorizontalAlignment="Left" Margin="404,130,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="646,100,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="646,130,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="130,210,0,0" VerticalAlignment="Top" Width="151" Foreground="{x:Null}" Background="#FFE2E2E2"/>
-        <Label x:Name="tbx_LastName" Content="" HorizontalAlignment="Left" Margin="130,180,0,0" VerticalAlignment="Top" Width="151" Foreground="{x:Null}" Background="#FFE2E2E2"/>
-        <Label x:Name="lbl_FirstName_Copy2" Content="" HorizontalAlignment="Left" Margin="404,185,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label x:Name="lbl_FirstName_Copy3" Content="" HorizontalAlignment="Left" Margin="404,216,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="646,185,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="130,312,0,0" VerticalAlignment="Top" Width="151" Foreground="{x:Null}" Background="#FFE2E2E2"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="130,342,0,0" VerticalAlignment="Top" Width="151" Foreground="{x:Null}" Background="#FFE2E2E2"/>
-        <Label x:Name="lbl_FirstName_Copy6" Content="" HorizontalAlignment="Left" Margin="404,310,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <Label x:Name="lbl_FirstName_Copy7" Content="" HorizontalAlignment="Left" Margin="404,340,0,0" VerticalAlignment="Top" Width="132" Background="#FFE2E2E2"/>
-        <TextBox HorizontalAlignment="Left" Margin="546,218,0,0" TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged_1" FontFamily="Candara"/>
-        <RadioButton Content="Female" HorizontalAlignment="Left" Margin="649,216,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Male" HorizontalAlignment="Left" Margin="711,216,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="AddButton" Content="+" HorizontalAlignment="Left" Margin="712,274,0,0" VerticalAlignment="Top" Width="33" Height="25" Click="AddButton_Click"/>
-
+        <Label Content="Student Registration Form" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="240" FontFamily="Candara" FontSize="20" FontWeight="Bold" Height="34"/>
+        <Label Content="FAMILY DATA" HorizontalAlignment="Left" Margin="39,68,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
+        <Label Content="Mother's Name:" Margin="42,101,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <Label Content="Occupation:" HorizontalAlignment="Left" Margin="42,133,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="42,165,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="275,456,0,62" Width="246"/>
+        <Label Content="Father's Name:" Margin="402,100,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,165,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Occupation:" Margin="402,132,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Contact Number:" Margin="402,165,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="SIBLINGS DATA" HorizontalAlignment="Left" Margin="39,201,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="42,229,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="First Name:" HorizontalAlignment="Left" Margin="42,259,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,259,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="42,290,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,290,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Age:" Margin="402,229,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,228,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Gender:" Margin="402,259,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <Label Content="Occupation" Margin="402,289,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,289,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <RadioButton Content="Female" HorizontalAlignment="Left" Margin="528,263,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Male" HorizontalAlignment="Left" Margin="590,263,0,0" VerticalAlignment="Top"/>
+        <Label Content="IN CASE OF EMERGENCY" HorizontalAlignment="Left" Margin="39,325,0,0" VerticalAlignment="Top" Width="193" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
+        <Label Content="Guardian Name:" HorizontalAlignment="Left" Margin="42,357,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,357,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Guardian Address:" HorizontalAlignment="Left" Margin="42,387,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="147,387,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Relationship:" Margin="402,356,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,356,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Label Content="Contact Number:" Margin="402,387,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="507,387,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
     </Grid>
 </Window>
