@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Student Information" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-5S97ADVG\sqlexpress;Initial Catalog=&quot;Student Information&quot;;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Student_Information_System.Properties.Settings" SettingsPropertyName="Student_InformationConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EmergencyContact" Member="EmergencyContacts">
+    <Type Name="EmergencyContact">
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Relationship" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="StudentDetail_EmergencyContact" Member="StudentDetail" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ParentDetails" Member="ParentDetails">
+    <Type Name="ParentDetail">
+      <Column Name="ParentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Occupation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Relationship" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="StudentDetail_ParentDetail" Member="StudentDetail" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiblingDetails" Member="SiblingDetails">
+    <Type Name="SiblingDetail">
+      <Column Name="SiblingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Occupation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="StudentDetail_SiblingDetail" Member="StudentDetail" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentDetails" Member="StudentDetails">
+    <Type Name="StudentDetail">
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="HomeAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="StudentDetail_EmergencyContact" Member="EmergencyContacts" ThisKey="StudentID" OtherKey="StudentID" Type="EmergencyContact" />
+      <Association Name="StudentDetail_ParentDetail" Member="ParentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="ParentDetail" />
+      <Association Name="StudentDetail_SiblingDetail" Member="SiblingDetails" ThisKey="StudentID" OtherKey="StudentID" Type="SiblingDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccountDetails" Member="AccountDetails">
+    <Type Name="AccountDetail">
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
