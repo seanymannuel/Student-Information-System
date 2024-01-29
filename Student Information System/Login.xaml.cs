@@ -34,8 +34,8 @@ namespace Student_Information_System
             if (account != null )
             {
                 MessageBox.Show("Login Successful");
-                //this.Hide();
-                //new Login().Show();
+                this.Hide();
+                new StudentDatabase().Show();
             }
 
             else

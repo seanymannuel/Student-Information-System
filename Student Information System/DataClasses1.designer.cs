@@ -42,13 +42,10 @@ namespace Student_Information_System
     partial void InsertStudentDetail(StudentDetail instance);
     partial void UpdateStudentDetail(StudentDetail instance);
     partial void DeleteStudentDetail(StudentDetail instance);
-    partial void InsertAccountDetail(AccountDetail instance);
-    partial void UpdateAccountDetail(AccountDetail instance);
-    partial void DeleteAccountDetail(AccountDetail instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::Student_Information_System.Properties.Settings.Default.Student_InformationConnectionString, mappingSource)
+				base(global::Student_Information_System.Properties.Settings.Default.Student_InformationConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -75,6 +72,14 @@ namespace Student_Information_System
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<AccountDetail> AccountDetails
+		{
+			get
+			{
+				return this.GetTable<AccountDetail>();
+			}
 		}
 		
 		public System.Data.Linq.Table<EmergencyContact> EmergencyContacts
@@ -108,12 +113,49 @@ namespace Student_Information_System
 				return this.GetTable<StudentDetail>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AccountDetails")]
+	public partial class AccountDetail
+	{
 		
-		public System.Data.Linq.Table<AccountDetail> AccountDetails
+		private string _Username;
+		
+		private string _Password;
+		
+		public AccountDetail()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Username
 		{
 			get
 			{
-				return this.GetTable<AccountDetail>();
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
 			}
 		}
 	}
@@ -126,9 +168,9 @@ namespace Student_Information_System
 		
 		private int _ContactID;
 		
-		private string _FirstName;
+		private string _GuardianName;
 		
-		private string _LastName;
+		private string _GuardianAddress;
 		
 		private string _Relationship;
 		
@@ -144,10 +186,10 @@ namespace Student_Information_System
     partial void OnCreated();
     partial void OnContactIDChanging(int value);
     partial void OnContactIDChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
+    partial void OnGuardianNameChanging(string value);
+    partial void OnGuardianNameChanged();
+    partial void OnGuardianAddressChanging(string value);
+    partial void OnGuardianAddressChanged();
     partial void OnRelationshipChanging(string value);
     partial void OnRelationshipChanged();
     partial void OnContactNumberChanging(int value);
@@ -182,42 +224,42 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string FirstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GuardianName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string GuardianName
 		{
 			get
 			{
-				return this._FirstName;
+				return this._GuardianName;
 			}
 			set
 			{
-				if ((this._FirstName != value))
+				if ((this._GuardianName != value))
 				{
-					this.OnFirstNameChanging(value);
+					this.OnGuardianNameChanging(value);
 					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
+					this._GuardianName = value;
+					this.SendPropertyChanged("GuardianName");
+					this.OnGuardianNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string LastName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GuardianAddress", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string GuardianAddress
 		{
 			get
 			{
-				return this._LastName;
+				return this._GuardianAddress;
 			}
 			set
 			{
-				if ((this._LastName != value))
+				if ((this._GuardianAddress != value))
 				{
-					this.OnLastNameChanging(value);
+					this.OnGuardianAddressChanging(value);
 					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
+					this._GuardianAddress = value;
+					this.SendPropertyChanged("GuardianAddress");
+					this.OnGuardianAddressChanged();
 				}
 			}
 		}
@@ -349,13 +391,17 @@ namespace Student_Information_System
 		
 		private int _ParentID;
 		
-		private string _FirstName;
+		private string _MotherName;
 		
-		private string _LastName;
+		private string _MotherOccupation;
 		
-		private string _Occupation;
+		private int _MotherContactNumber;
 		
-		private string _Relationship;
+		private string _FatherName;
+		
+		private string _FatherOccupation;
+		
+		private int _FatherContactNumber;
 		
 		private int _StudentID;
 		
@@ -367,14 +413,18 @@ namespace Student_Information_System
     partial void OnCreated();
     partial void OnParentIDChanging(int value);
     partial void OnParentIDChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
-    partial void OnOccupationChanging(string value);
-    partial void OnOccupationChanged();
-    partial void OnRelationshipChanging(string value);
-    partial void OnRelationshipChanged();
+    partial void OnMotherNameChanging(string value);
+    partial void OnMotherNameChanged();
+    partial void OnMotherOccupationChanging(string value);
+    partial void OnMotherOccupationChanged();
+    partial void OnMotherContactNumberChanging(int value);
+    partial void OnMotherContactNumberChanged();
+    partial void OnFatherNameChanging(string value);
+    partial void OnFatherNameChanged();
+    partial void OnFatherOccupationChanging(string value);
+    partial void OnFatherOccupationChanged();
+    partial void OnFatherContactNumberChanging(int value);
+    partial void OnFatherContactNumberChanged();
     partial void OnStudentIDChanging(int value);
     partial void OnStudentIDChanged();
     #endregion
@@ -405,82 +455,122 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string FirstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotherName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MotherName
 		{
 			get
 			{
-				return this._FirstName;
+				return this._MotherName;
 			}
 			set
 			{
-				if ((this._FirstName != value))
+				if ((this._MotherName != value))
 				{
-					this.OnFirstNameChanging(value);
+					this.OnMotherNameChanging(value);
 					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
+					this._MotherName = value;
+					this.SendPropertyChanged("MotherName");
+					this.OnMotherNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string LastName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotherOccupation", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MotherOccupation
 		{
 			get
 			{
-				return this._LastName;
+				return this._MotherOccupation;
 			}
 			set
 			{
-				if ((this._LastName != value))
+				if ((this._MotherOccupation != value))
 				{
-					this.OnLastNameChanging(value);
+					this.OnMotherOccupationChanging(value);
 					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
+					this._MotherOccupation = value;
+					this.SendPropertyChanged("MotherOccupation");
+					this.OnMotherOccupationChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Occupation", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Occupation
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotherContactNumber", DbType="Int NOT NULL")]
+		public int MotherContactNumber
 		{
 			get
 			{
-				return this._Occupation;
+				return this._MotherContactNumber;
 			}
 			set
 			{
-				if ((this._Occupation != value))
+				if ((this._MotherContactNumber != value))
 				{
-					this.OnOccupationChanging(value);
+					this.OnMotherContactNumberChanging(value);
 					this.SendPropertyChanging();
-					this._Occupation = value;
-					this.SendPropertyChanged("Occupation");
-					this.OnOccupationChanged();
+					this._MotherContactNumber = value;
+					this.SendPropertyChanged("MotherContactNumber");
+					this.OnMotherContactNumberChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Relationship", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Relationship
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FatherName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string FatherName
 		{
 			get
 			{
-				return this._Relationship;
+				return this._FatherName;
 			}
 			set
 			{
-				if ((this._Relationship != value))
+				if ((this._FatherName != value))
 				{
-					this.OnRelationshipChanging(value);
+					this.OnFatherNameChanging(value);
 					this.SendPropertyChanging();
-					this._Relationship = value;
-					this.SendPropertyChanged("Relationship");
-					this.OnRelationshipChanged();
+					this._FatherName = value;
+					this.SendPropertyChanged("FatherName");
+					this.OnFatherNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FatherOccupation", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string FatherOccupation
+		{
+			get
+			{
+				return this._FatherOccupation;
+			}
+			set
+			{
+				if ((this._FatherOccupation != value))
+				{
+					this.OnFatherOccupationChanging(value);
+					this.SendPropertyChanging();
+					this._FatherOccupation = value;
+					this.SendPropertyChanged("FatherOccupation");
+					this.OnFatherOccupationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FatherContactNumber", DbType="Int NOT NULL")]
+		public int FatherContactNumber
+		{
+			get
+			{
+				return this._FatherContactNumber;
+			}
+			set
+			{
+				if ((this._FatherContactNumber != value))
+				{
+					this.OnFatherContactNumberChanging(value);
+					this.SendPropertyChanging();
+					this._FatherContactNumber = value;
+					this.SendPropertyChanged("FatherContactNumber");
+					this.OnFatherContactNumberChanged();
 				}
 			}
 		}
@@ -574,9 +664,13 @@ namespace Student_Information_System
 		
 		private string _FirstName;
 		
+		private string _MiddleName;
+		
 		private string _LastName;
 		
-		private string _Occupation;
+		private int _Age;
+		
+		private string _Gender;
 		
 		private int _StudentID;
 		
@@ -590,10 +684,14 @@ namespace Student_Information_System
     partial void OnSiblingIDChanged();
     partial void OnFirstNameChanging(string value);
     partial void OnFirstNameChanged();
+    partial void OnMiddleNameChanging(string value);
+    partial void OnMiddleNameChanged();
     partial void OnLastNameChanging(string value);
     partial void OnLastNameChanged();
-    partial void OnOccupationChanging(string value);
-    partial void OnOccupationChanged();
+    partial void OnAgeChanging(int value);
+    partial void OnAgeChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
     partial void OnStudentIDChanging(int value);
     partial void OnStudentIDChanged();
     #endregion
@@ -644,6 +742,26 @@ namespace Student_Information_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MiddleName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MiddleName
+		{
+			get
+			{
+				return this._MiddleName;
+			}
+			set
+			{
+				if ((this._MiddleName != value))
+				{
+					this.OnMiddleNameChanging(value);
+					this.SendPropertyChanging();
+					this._MiddleName = value;
+					this.SendPropertyChanged("MiddleName");
+					this.OnMiddleNameChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string LastName
 		{
@@ -664,22 +782,42 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Occupation", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Occupation
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int NOT NULL")]
+		public int Age
 		{
 			get
 			{
-				return this._Occupation;
+				return this._Age;
 			}
 			set
 			{
-				if ((this._Occupation != value))
+				if ((this._Age != value))
 				{
-					this.OnOccupationChanging(value);
+					this.OnAgeChanging(value);
 					this.SendPropertyChanging();
-					this._Occupation = value;
-					this.SendPropertyChanged("Occupation");
-					this.OnOccupationChanged();
+					this._Age = value;
+					this.SendPropertyChanged("Age");
+					this.OnAgeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
 				}
 			}
 		}
@@ -773,13 +911,19 @@ namespace Student_Information_System
 		
 		private string _FirstName;
 		
+		private string _MiddleName;
+		
 		private string _LastName;
 		
 		private string _Gender;
 		
 		private System.DateTime _Birthday;
 		
+		private int _Age;
+		
 		private string _HomeAddress;
+		
+		private int _ContactNumber;
 		
 		private EntitySet<EmergencyContact> _EmergencyContacts;
 		
@@ -795,14 +939,20 @@ namespace Student_Information_System
     partial void OnStudentIDChanged();
     partial void OnFirstNameChanging(string value);
     partial void OnFirstNameChanged();
+    partial void OnMiddleNameChanging(string value);
+    partial void OnMiddleNameChanged();
     partial void OnLastNameChanging(string value);
     partial void OnLastNameChanged();
     partial void OnGenderChanging(string value);
     partial void OnGenderChanged();
     partial void OnBirthdayChanging(System.DateTime value);
     partial void OnBirthdayChanged();
+    partial void OnAgeChanging(int value);
+    partial void OnAgeChanged();
     partial void OnHomeAddressChanging(string value);
     partial void OnHomeAddressChanged();
+    partial void OnContactNumberChanging(int value);
+    partial void OnContactNumberChanged();
     #endregion
 		
 		public StudentDetail()
@@ -849,6 +999,26 @@ namespace Student_Information_System
 					this._FirstName = value;
 					this.SendPropertyChanged("FirstName");
 					this.OnFirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MiddleName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MiddleName
+		{
+			get
+			{
+				return this._MiddleName;
+			}
+			set
+			{
+				if ((this._MiddleName != value))
+				{
+					this.OnMiddleNameChanging(value);
+					this.SendPropertyChanging();
+					this._MiddleName = value;
+					this.SendPropertyChanged("MiddleName");
+					this.OnMiddleNameChanged();
 				}
 			}
 		}
@@ -913,6 +1083,26 @@ namespace Student_Information_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int NOT NULL")]
+		public int Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this.OnAgeChanging(value);
+					this.SendPropertyChanging();
+					this._Age = value;
+					this.SendPropertyChanged("Age");
+					this.OnAgeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeAddress", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string HomeAddress
 		{
@@ -929,6 +1119,26 @@ namespace Student_Information_System
 					this._HomeAddress = value;
 					this.SendPropertyChanged("HomeAddress");
 					this.OnHomeAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="Int NOT NULL")]
+		public int ContactNumber
+		{
+			get
+			{
+				return this._ContactNumber;
+			}
+			set
+			{
+				if ((this._ContactNumber != value))
+				{
+					this.OnContactNumberChanging(value);
+					this.SendPropertyChanging();
+					this._ContactNumber = value;
+					this.SendPropertyChanged("ContactNumber");
+					this.OnContactNumberChanged();
 				}
 			}
 		}
@@ -1026,92 +1236,6 @@ namespace Student_Information_System
 		{
 			this.SendPropertyChanging();
 			entity.StudentDetail = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AccountDetails")]
-	public partial class AccountDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Username;
-		
-		private string _Password;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUsernameChanging(string value);
-    partial void OnUsernameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    #endregion
-		
-		public AccountDetail()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this.OnUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._Username = value;
-					this.SendPropertyChanged("Username");
-					this.OnUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

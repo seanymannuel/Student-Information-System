@@ -34,7 +34,8 @@ namespace Student_Information_System
         private void btn_student_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            new Registration().Show();
+            Registration registrationWindow = new Registration();
+            registrationWindow.Show();
         }
     }
 }

@@ -19,15 +19,15 @@
         <Label Content="Gender:" HorizontalAlignment="Left" Margin="30,258,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
         <Label Content="Home Address:" HorizontalAlignment="Left" Margin="30,289,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
         <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="30,320,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,132,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,163,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,227,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,289,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246" Height="26"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="135,358,0,0" VerticalAlignment="Top" Height="30" Width="246"/>
-        <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,193,0,0" Height="30" Width="246"/>
-        <RadioButton Content="Female" HorizontalAlignment="Left" Margin="175,266,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Male" HorizontalAlignment="Left" Margin="246,266,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_LastName" HorizontalAlignment="Left" Margin="135,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_FirstName" HorizontalAlignment="Left" Margin="135,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_MiddleName" HorizontalAlignment="Left" Margin="135,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_Age" HorizontalAlignment="Left" Margin="135,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_Address" HorizontalAlignment="Left" Margin="135,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_ContactNumber" HorizontalAlignment="Left" Margin="135,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Button x:Name="btn_Proceed" Content="Proceed" HorizontalAlignment="Left" Margin="135,358,0,0" VerticalAlignment="Top" Height="30" Width="246"/>
+        <DatePicker x:Name="date_Birthday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,193,0,0" Height="30" Width="246"/>
+        <RadioButton x:Name="rbtn_Female" Content="Female" HorizontalAlignment="Left" Margin="175,266,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbtn_Male" Content="Male" HorizontalAlignment="Left" Margin="246,266,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -12,7 +12,7 @@ namespace Student_Information_System.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -32,6 +32,28 @@ namespace Student_Information_System.Properties {
         public string Student_InformationConnectionString {
             get {
                 return ((string)(this["Student_InformationConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GT966OV\\SQLEXPRESS01;Integrated Security=True")]
+        public string DataSourceConnectionString {
+            get {
+                return ((string)(this["DataSourceConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GT966OV\\SQLEXPRESS01;Initial Catalog=\"Student Information\";In" +
+            "tegrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=F" +
+            "alse")]
+        public string Student_InformationConnectionString1 {
+            get {
+                return ((string)(this["Student_InformationConnectionString1"]));
             }
         }
     }
