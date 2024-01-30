@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Login" Height="376" Width="348">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF66B1CB" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button x:Name="btn_login" Content="LOGIN" HorizontalAlignment="Center" Height="34" Margin="0,263,0,0" VerticalAlignment="Top" Width="256" Click="btn_login_Click" FontFamily="Candara" FontWeight="Bold"/>
         <Label Content="Username" HorizontalAlignment="Left" Height="30" Margin="41,97,0,0" VerticalAlignment="Top" Width="151"/>
         <Label Content="Password" HorizontalAlignment="Left" Height="30" Margin="41,0,0,0" VerticalAlignment="Center" Width="151"/>

@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Student_Information_System"
         mc:Ignorable="d"
-        Title="Additional Details" Height="575" Width="800">
-    <Grid Margin="0,0,0,-6" RenderTransformOrigin="0.738,0.059">
+        Title="Additional Details" Height="511" Width="800">
+    <Grid x:Name="grid_AdditionalDetails" Margin="0,0,0,-6" RenderTransformOrigin="0.738,0.059">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF66B1CB" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label Content="Student Registration Form" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="240" FontFamily="Candara" FontSize="20" FontWeight="Bold" Height="34"/>
         <Label Content="FAMILY DATA" HorizontalAlignment="Left" Margin="39,68,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
         <Label Content="Mother's Name:" Margin="42,101,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
@@ -23,16 +29,16 @@
         <TextBox x:Name="tbx_FatherContact" HorizontalAlignment="Left" Margin="507,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
         <Label Content="SIBLINGS DATA" HorizontalAlignment="Left" Margin="39,201,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
         <Label Content="Last Name:" HorizontalAlignment="Left" Margin="42,229,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_SiblingLname" HorizontalAlignment="Left" Margin="147,229,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_SiblingLname" HorizontalAlignment="Left" Margin="147,229,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26" TextChanged="SiblingDetails_TextChanged"/>
         <Label Content="First Name:" HorizontalAlignment="Left" Margin="42,259,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_SiblingFname" HorizontalAlignment="Left" Margin="147,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <TextBox x:Name="tbx_SiblingFname" HorizontalAlignment="Left" Margin="147,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26" TextChanged="SiblingDetails_TextChanged"/>
         <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="42,290,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_SiblingMname" HorizontalAlignment="Left" Margin="147,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
-        <Label Content="Age:" Margin="402,229,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_SiblingAge" HorizontalAlignment="Left" Margin="507,228,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
-        <Label Content="Gender:" Margin="402,259,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <RadioButton x:Name="rbtn_Female" Content="Female" HorizontalAlignment="Left" Margin="528,263,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rbtn_Male" Content="Male" HorizontalAlignment="Left" Margin="590,263,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_SiblingMname" HorizontalAlignment="Left" Margin="147,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26" TextChanged="SiblingDetails_TextChanged"/>
+        <Label Content="Age:" Margin="402,291,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_SiblingAge" HorizontalAlignment="Left" Margin="507,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26" TextChanged="SiblingDetails_TextChanged"/>
+        <Label Content="Gender:" Margin="402,256,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <RadioButton x:Name="rbtn_Female" Content="Female" HorizontalAlignment="Left" Margin="528,260,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_Male" Content="Male" HorizontalAlignment="Left" Margin="590,260,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
         <Label Content="IN CASE OF EMERGENCY" HorizontalAlignment="Left" Margin="39,325,0,0" VerticalAlignment="Top" Width="193" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
         <Label Content="Guardian Name:" HorizontalAlignment="Left" Margin="42,357,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
         <TextBox x:Name="tbx_GuardianName" HorizontalAlignment="Left" Margin="147,357,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
@@ -42,6 +48,7 @@
         <TextBox x:Name="tbx_Relationship" HorizontalAlignment="Left" Margin="507,356,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
         <Label Content="Contact Number:" Margin="402,387,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
         <TextBox x:Name="tbx_GuardianContact" HorizontalAlignment="Left" Margin="507,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
-        <Button x:Name="btn_Register" Content="Register" HorizontalAlignment="Left" Margin="349,439,0,0" VerticalAlignment="Top"  Height="28" Width="93"/>
+        <Button x:Name="btn_Register" Content="Register" HorizontalAlignment="Center" Margin="0,439,0,0" VerticalAlignment="Top"  Height="28" Width="172" Click="Btn_Register_Click"/>
+        <Button x:Name="btn_addSiblings" Content="+" HorizontalAlignment="Left" Margin="710,257,0,0" VerticalAlignment="Top" Height="23" Width="31" IsEnabled="False" Click="btn_addSiblings_Click"/>
     </Grid>
 </Window>

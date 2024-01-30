@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:Student_Information_System"
         mc:Ignorable="d"
         Title="MainWindow" Height="376" Width="348">
+
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF66B1CB" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button x:Name="btn_student" Content="Student Registration" HorizontalAlignment="Center" Height="34" Margin="0,228,0,0" VerticalAlignment="Top" Width="228" Click="btn_student_Click" FontFamily="Candara" FontSize="14" FontWeight="Bold"/>
         <Button x:Name="btn_admin" Content="Student Database" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="228" Click="btn_admin_Click" Margin="0,170,0,0" FontWeight="Bold" FontFamily="Candara" FontSize="14"/>
         <Label Content="WELCOME" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" Width="108" FontFamily="Candara" FontSize="20" FontWeight="Bold" Height="34" VerticalContentAlignment="Center"/>

@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Registration" Height="443" Width="416">
     <Grid Margin="0,0,0,-6" RenderTransformOrigin="0.738,0.059">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF66B1CB" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>
         <Label Content="Student Registration Form" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="240" FontFamily="Candara" FontSize="20" FontWeight="Bold" Height="34"/>

@@ -31,7 +31,7 @@ namespace Student_Information_System
             var account = db.AccountDetails.SingleOrDefault
             (a => a.Username == tbx_username.Text && a.Password == tbx_password.Password);
 
-            if (account != null )
+            if (account != null)
             {
                 MessageBox.Show("Login Successful");
                 this.Hide();
