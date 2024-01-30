@@ -33,15 +33,15 @@ namespace Student_Information_System
     partial void InsertEmergencyContact(EmergencyContact instance);
     partial void UpdateEmergencyContact(EmergencyContact instance);
     partial void DeleteEmergencyContact(EmergencyContact instance);
-    partial void InsertParentDetail(ParentDetail instance);
-    partial void UpdateParentDetail(ParentDetail instance);
-    partial void DeleteParentDetail(ParentDetail instance);
-    partial void InsertSiblingDetail(SiblingDetail instance);
-    partial void UpdateSiblingDetail(SiblingDetail instance);
-    partial void DeleteSiblingDetail(SiblingDetail instance);
-    partial void InsertStudentDetail(StudentDetail instance);
-    partial void UpdateStudentDetail(StudentDetail instance);
-    partial void DeleteStudentDetail(StudentDetail instance);
+    partial void InsertParentDetails(ParentDetails instance);
+    partial void UpdateParentDetails(ParentDetails instance);
+    partial void DeleteParentDetails(ParentDetails instance);
+    partial void InsertSiblingDetails(SiblingDetails instance);
+    partial void UpdateSiblingDetails(SiblingDetails instance);
+    partial void DeleteSiblingDetails(SiblingDetails instance);
+    partial void InsertStudentDetails(StudentDetails instance);
+    partial void UpdateStudentDetails(StudentDetails instance);
+    partial void DeleteStudentDetails(StudentDetails instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -90,27 +90,27 @@ namespace Student_Information_System
 			}
 		}
 		
-		public System.Data.Linq.Table<ParentDetail> ParentDetails
+		public System.Data.Linq.Table<ParentDetails> ParentDetails
 		{
 			get
 			{
-				return this.GetTable<ParentDetail>();
+				return this.GetTable<ParentDetails>();
 			}
 		}
 		
-		public System.Data.Linq.Table<SiblingDetail> SiblingDetails
+		public System.Data.Linq.Table<SiblingDetails> SiblingDetails
 		{
 			get
 			{
-				return this.GetTable<SiblingDetail>();
+				return this.GetTable<SiblingDetails>();
 			}
 		}
 		
-		public System.Data.Linq.Table<StudentDetail> StudentDetails
+		public System.Data.Linq.Table<StudentDetails> StudentDetails
 		{
 			get
 			{
-				return this.GetTable<StudentDetail>();
+				return this.GetTable<StudentDetails>();
 			}
 		}
 	}
@@ -174,11 +174,11 @@ namespace Student_Information_System
 		
 		private string _Relationship;
 		
-		private int _ContactNumber;
+		private string _EmergencyContactNumber;
 		
 		private int _StudentID;
 		
-		private EntityRef<StudentDetail> _StudentDetail;
+		private EntityRef<StudentDetails> _StudentDetails;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -192,15 +192,15 @@ namespace Student_Information_System
     partial void OnGuardianAddressChanged();
     partial void OnRelationshipChanging(string value);
     partial void OnRelationshipChanged();
-    partial void OnContactNumberChanging(int value);
-    partial void OnContactNumberChanged();
+    partial void OnEmergencyContactNumberChanging(string value);
+    partial void OnEmergencyContactNumberChanged();
     partial void OnStudentIDChanging(int value);
     partial void OnStudentIDChanged();
     #endregion
 		
 		public EmergencyContact()
 		{
-			this._StudentDetail = default(EntityRef<StudentDetail>);
+			this._StudentDetails = default(EntityRef<StudentDetails>);
 			OnCreated();
 		}
 		
@@ -284,22 +284,22 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="Int NOT NULL")]
-		public int ContactNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmergencyContactNumber", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string EmergencyContactNumber
 		{
 			get
 			{
-				return this._ContactNumber;
+				return this._EmergencyContactNumber;
 			}
 			set
 			{
-				if ((this._ContactNumber != value))
+				if ((this._EmergencyContactNumber != value))
 				{
-					this.OnContactNumberChanging(value);
+					this.OnEmergencyContactNumberChanging(value);
 					this.SendPropertyChanging();
-					this._ContactNumber = value;
-					this.SendPropertyChanged("ContactNumber");
-					this.OnContactNumberChanged();
+					this._EmergencyContactNumber = value;
+					this.SendPropertyChanged("EmergencyContactNumber");
+					this.OnEmergencyContactNumberChanged();
 				}
 			}
 		}
@@ -315,7 +315,7 @@ namespace Student_Information_System
 			{
 				if ((this._StudentID != value))
 				{
-					if (this._StudentDetail.HasLoadedOrAssignedValue)
+					if (this._StudentDetails.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -328,26 +328,26 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_EmergencyContact", Storage="_StudentDetail", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
-		public StudentDetail StudentDetail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_EmergencyContact", Storage="_StudentDetails", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
+		public StudentDetails StudentDetails
 		{
 			get
 			{
-				return this._StudentDetail.Entity;
+				return this._StudentDetails.Entity;
 			}
 			set
 			{
-				StudentDetail previousValue = this._StudentDetail.Entity;
+				StudentDetails previousValue = this._StudentDetails.Entity;
 				if (((previousValue != value) 
-							|| (this._StudentDetail.HasLoadedOrAssignedValue == false)))
+							|| (this._StudentDetails.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._StudentDetail.Entity = null;
+						this._StudentDetails.Entity = null;
 						previousValue.EmergencyContacts.Remove(this);
 					}
-					this._StudentDetail.Entity = value;
+					this._StudentDetails.Entity = value;
 					if ((value != null))
 					{
 						value.EmergencyContacts.Add(this);
@@ -357,7 +357,7 @@ namespace Student_Information_System
 					{
 						this._StudentID = default(int);
 					}
-					this.SendPropertyChanged("StudentDetail");
+					this.SendPropertyChanged("StudentDetails");
 				}
 			}
 		}
@@ -384,7 +384,7 @@ namespace Student_Information_System
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ParentDetails")]
-	public partial class ParentDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class ParentDetails : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -395,17 +395,17 @@ namespace Student_Information_System
 		
 		private string _MotherOccupation;
 		
-		private int _MotherContactNumber;
+		private string _MotherContactNumber;
 		
 		private string _FatherName;
 		
 		private string _FatherOccupation;
 		
-		private int _FatherContactNumber;
+		private string _FatherContactNumber;
 		
 		private int _StudentID;
 		
-		private EntityRef<StudentDetail> _StudentDetail;
+		private EntityRef<StudentDetails> _StudentDetails;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -417,21 +417,21 @@ namespace Student_Information_System
     partial void OnMotherNameChanged();
     partial void OnMotherOccupationChanging(string value);
     partial void OnMotherOccupationChanged();
-    partial void OnMotherContactNumberChanging(int value);
+    partial void OnMotherContactNumberChanging(string value);
     partial void OnMotherContactNumberChanged();
     partial void OnFatherNameChanging(string value);
     partial void OnFatherNameChanged();
     partial void OnFatherOccupationChanging(string value);
     partial void OnFatherOccupationChanged();
-    partial void OnFatherContactNumberChanging(int value);
+    partial void OnFatherContactNumberChanging(string value);
     partial void OnFatherContactNumberChanged();
     partial void OnStudentIDChanging(int value);
     partial void OnStudentIDChanged();
     #endregion
 		
-		public ParentDetail()
+		public ParentDetails()
 		{
-			this._StudentDetail = default(EntityRef<StudentDetail>);
+			this._StudentDetails = default(EntityRef<StudentDetails>);
 			OnCreated();
 		}
 		
@@ -495,8 +495,8 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotherContactNumber", DbType="Int NOT NULL")]
-		public int MotherContactNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotherContactNumber", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string MotherContactNumber
 		{
 			get
 			{
@@ -555,8 +555,8 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FatherContactNumber", DbType="Int NOT NULL")]
-		public int FatherContactNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FatherContactNumber", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string FatherContactNumber
 		{
 			get
 			{
@@ -586,7 +586,7 @@ namespace Student_Information_System
 			{
 				if ((this._StudentID != value))
 				{
-					if (this._StudentDetail.HasLoadedOrAssignedValue)
+					if (this._StudentDetails.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -599,26 +599,26 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_ParentDetail", Storage="_StudentDetail", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
-		public StudentDetail StudentDetail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_ParentDetail", Storage="_StudentDetails", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
+		public StudentDetails StudentDetails
 		{
 			get
 			{
-				return this._StudentDetail.Entity;
+				return this._StudentDetails.Entity;
 			}
 			set
 			{
-				StudentDetail previousValue = this._StudentDetail.Entity;
+				StudentDetails previousValue = this._StudentDetails.Entity;
 				if (((previousValue != value) 
-							|| (this._StudentDetail.HasLoadedOrAssignedValue == false)))
+							|| (this._StudentDetails.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._StudentDetail.Entity = null;
+						this._StudentDetails.Entity = null;
 						previousValue.ParentDetails.Remove(this);
 					}
-					this._StudentDetail.Entity = value;
+					this._StudentDetails.Entity = value;
 					if ((value != null))
 					{
 						value.ParentDetails.Add(this);
@@ -628,7 +628,7 @@ namespace Student_Information_System
 					{
 						this._StudentID = default(int);
 					}
-					this.SendPropertyChanged("StudentDetail");
+					this.SendPropertyChanged("StudentDetails");
 				}
 			}
 		}
@@ -655,7 +655,7 @@ namespace Student_Information_System
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SiblingDetails")]
-	public partial class SiblingDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class SiblingDetails : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -674,7 +674,7 @@ namespace Student_Information_System
 		
 		private int _StudentID;
 		
-		private EntityRef<StudentDetail> _StudentDetail;
+		private EntityRef<StudentDetails> _StudentDetails;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -696,9 +696,9 @@ namespace Student_Information_System
     partial void OnStudentIDChanged();
     #endregion
 		
-		public SiblingDetail()
+		public SiblingDetails()
 		{
-			this._StudentDetail = default(EntityRef<StudentDetail>);
+			this._StudentDetails = default(EntityRef<StudentDetails>);
 			OnCreated();
 		}
 		
@@ -833,7 +833,7 @@ namespace Student_Information_System
 			{
 				if ((this._StudentID != value))
 				{
-					if (this._StudentDetail.HasLoadedOrAssignedValue)
+					if (this._StudentDetails.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -846,26 +846,26 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_SiblingDetail", Storage="_StudentDetail", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
-		public StudentDetail StudentDetail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_SiblingDetail", Storage="_StudentDetails", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
+		public StudentDetails StudentDetails
 		{
 			get
 			{
-				return this._StudentDetail.Entity;
+				return this._StudentDetails.Entity;
 			}
 			set
 			{
-				StudentDetail previousValue = this._StudentDetail.Entity;
+				StudentDetails previousValue = this._StudentDetails.Entity;
 				if (((previousValue != value) 
-							|| (this._StudentDetail.HasLoadedOrAssignedValue == false)))
+							|| (this._StudentDetails.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._StudentDetail.Entity = null;
+						this._StudentDetails.Entity = null;
 						previousValue.SiblingDetails.Remove(this);
 					}
-					this._StudentDetail.Entity = value;
+					this._StudentDetails.Entity = value;
 					if ((value != null))
 					{
 						value.SiblingDetails.Add(this);
@@ -875,7 +875,7 @@ namespace Student_Information_System
 					{
 						this._StudentID = default(int);
 					}
-					this.SendPropertyChanged("StudentDetail");
+					this.SendPropertyChanged("StudentDetails");
 				}
 			}
 		}
@@ -902,7 +902,7 @@ namespace Student_Information_System
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StudentDetails")]
-	public partial class StudentDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class StudentDetails : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -923,13 +923,13 @@ namespace Student_Information_System
 		
 		private string _HomeAddress;
 		
-		private int _ContactNumber;
+		private string _ContactNumber;
 		
 		private EntitySet<EmergencyContact> _EmergencyContacts;
 		
-		private EntitySet<ParentDetail> _ParentDetails;
+		private EntitySet<ParentDetails> _ParentDetails;
 		
-		private EntitySet<SiblingDetail> _SiblingDetails;
+		private EntitySet<SiblingDetails> _SiblingDetails;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -951,15 +951,15 @@ namespace Student_Information_System
     partial void OnAgeChanged();
     partial void OnHomeAddressChanging(string value);
     partial void OnHomeAddressChanged();
-    partial void OnContactNumberChanging(int value);
+    partial void OnContactNumberChanging(string value);
     partial void OnContactNumberChanged();
     #endregion
 		
-		public StudentDetail()
+		public StudentDetails()
 		{
 			this._EmergencyContacts = new EntitySet<EmergencyContact>(new Action<EmergencyContact>(this.attach_EmergencyContacts), new Action<EmergencyContact>(this.detach_EmergencyContacts));
-			this._ParentDetails = new EntitySet<ParentDetail>(new Action<ParentDetail>(this.attach_ParentDetails), new Action<ParentDetail>(this.detach_ParentDetails));
-			this._SiblingDetails = new EntitySet<SiblingDetail>(new Action<SiblingDetail>(this.attach_SiblingDetails), new Action<SiblingDetail>(this.detach_SiblingDetails));
+			this._ParentDetails = new EntitySet<ParentDetails>(new Action<ParentDetails>(this.attach_ParentDetails), new Action<ParentDetails>(this.detach_ParentDetails));
+			this._SiblingDetails = new EntitySet<SiblingDetails>(new Action<SiblingDetails>(this.attach_SiblingDetails), new Action<SiblingDetails>(this.detach_SiblingDetails));
 			OnCreated();
 		}
 		
@@ -1123,8 +1123,8 @@ namespace Student_Information_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="Int NOT NULL")]
-		public int ContactNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string ContactNumber
 		{
 			get
 			{
@@ -1157,7 +1157,7 @@ namespace Student_Information_System
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_ParentDetail", Storage="_ParentDetails", ThisKey="StudentID", OtherKey="StudentID")]
-		public EntitySet<ParentDetail> ParentDetails
+		public EntitySet<ParentDetails> ParentDetails
 		{
 			get
 			{
@@ -1170,7 +1170,7 @@ namespace Student_Information_System
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StudentDetail_SiblingDetail", Storage="_SiblingDetails", ThisKey="StudentID", OtherKey="StudentID")]
-		public EntitySet<SiblingDetail> SiblingDetails
+		public EntitySet<SiblingDetails> SiblingDetails
 		{
 			get
 			{
@@ -1205,37 +1205,37 @@ namespace Student_Information_System
 		private void attach_EmergencyContacts(EmergencyContact entity)
 		{
 			this.SendPropertyChanging();
-			entity.StudentDetail = this;
+			entity.StudentDetails = this;
 		}
 		
 		private void detach_EmergencyContacts(EmergencyContact entity)
 		{
 			this.SendPropertyChanging();
-			entity.StudentDetail = null;
+			entity.StudentDetails = null;
 		}
 		
-		private void attach_ParentDetails(ParentDetail entity)
+		private void attach_ParentDetails(ParentDetails entity)
 		{
 			this.SendPropertyChanging();
-			entity.StudentDetail = this;
+			entity.StudentDetails = this;
 		}
 		
-		private void detach_ParentDetails(ParentDetail entity)
+		private void detach_ParentDetails(ParentDetails entity)
 		{
 			this.SendPropertyChanging();
-			entity.StudentDetail = null;
+			entity.StudentDetails = null;
 		}
 		
-		private void attach_SiblingDetails(SiblingDetail entity)
+		private void attach_SiblingDetails(SiblingDetails entity)
 		{
 			this.SendPropertyChanging();
-			entity.StudentDetail = this;
+			entity.StudentDetails = this;
 		}
 		
-		private void detach_SiblingDetails(SiblingDetail entity)
+		private void detach_SiblingDetails(SiblingDetails entity)
 		{
 			this.SendPropertyChanging();
-			entity.StudentDetail = null;
+			entity.StudentDetails = null;
 		}
 	}
 }

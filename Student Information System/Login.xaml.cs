@@ -23,7 +23,7 @@ namespace Student_Information_System
         public Login()
         {
             InitializeComponent();
-            db = new DataClasses1DataContext(Properties.Settings.Default.Student_InformationConnectionString);
+            db = new DataClasses1DataContext(Properties.Settings.Default.Student_InformationConnectionString1);
         }
 
         private void btn_login_Click(object sender, RoutedEventArgs e)

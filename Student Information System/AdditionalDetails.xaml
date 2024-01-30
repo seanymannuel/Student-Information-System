@@ -12,7 +12,6 @@
         <Label Content="Mother's Name:" Margin="42,101,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
         <Label Content="Occupation:" HorizontalAlignment="Left" Margin="42,133,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
         <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="42,165,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Button x:Name="btn_Register" Content="Register" HorizontalAlignment="Left" Margin="275,456,0,75" Width="246"/>
         <Label Content="Father's Name:" Margin="402,100,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
         <TextBox x:Name="tbx_MothersName" HorizontalAlignment="Left" Margin="147,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
         <TextBox x:Name="tbx_MotherOccupation" HorizontalAlignment="Left" Margin="147,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
@@ -43,5 +42,6 @@
         <TextBox x:Name="tbx_Relationship" HorizontalAlignment="Left" Margin="507,356,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
         <Label Content="Contact Number:" Margin="402,387,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
         <TextBox x:Name="tbx_GuardianContact" HorizontalAlignment="Left" Margin="507,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Height="26"/>
+        <Button x:Name="btn_Register" Content="Register" HorizontalAlignment="Left" Margin="349,439,0,0" VerticalAlignment="Top"  Height="28" Width="93"/>
     </Grid>
 </Window>

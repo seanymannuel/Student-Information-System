@@ -12,26 +12,26 @@
       <Column Name="GuardianName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="GuardianAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Relationship" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ContactNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmergencyContactNumber" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="StudentDetail_EmergencyContact" Member="StudentDetail" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetail" IsForeignKey="true" />
+      <Association Name="StudentDetail_EmergencyContact" Member="StudentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetails" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ParentDetails" Member="ParentDetails">
-    <Type Name="ParentDetail">
+    <Type Name="ParentDetails">
       <Column Name="ParentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MotherName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MotherOccupation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MotherContactNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MotherContactNumber" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="FatherName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="FatherOccupation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="FatherContactNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FatherContactNumber" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="StudentDetail_ParentDetail" Member="StudentDetail" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetail" IsForeignKey="true" />
+      <Association Name="StudentDetail_ParentDetail" Member="StudentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetails" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SiblingDetails" Member="SiblingDetails">
-    <Type Name="SiblingDetail">
+    <Type Name="SiblingDetails">
       <Column Name="SiblingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -39,11 +39,11 @@
       <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Gender" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="StudentDetail_SiblingDetail" Member="StudentDetail" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetail" IsForeignKey="true" />
+      <Association Name="StudentDetail_SiblingDetail" Member="StudentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="StudentDetails" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.StudentDetails" Member="StudentDetails">
-    <Type Name="StudentDetail">
+    <Type Name="StudentDetails">
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -52,10 +52,10 @@
       <Column Name="Birthday" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HomeAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ContactNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
       <Association Name="StudentDetail_EmergencyContact" Member="EmergencyContacts" ThisKey="StudentID" OtherKey="StudentID" Type="EmergencyContact" />
-      <Association Name="StudentDetail_ParentDetail" Member="ParentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="ParentDetail" />
-      <Association Name="StudentDetail_SiblingDetail" Member="SiblingDetails" ThisKey="StudentID" OtherKey="StudentID" Type="SiblingDetail" />
+      <Association Name="StudentDetail_ParentDetail" Member="ParentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="ParentDetails" />
+      <Association Name="StudentDetail_SiblingDetail" Member="SiblingDetails" ThisKey="StudentID" OtherKey="StudentID" Type="SiblingDetails" />
     </Type>
   </Table>
 </Database>
