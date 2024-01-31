@@ -183,5 +183,11 @@ namespace Student_Information_System
 
             return true;
         }
+
+        private void btn_rBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new MainWindow().Show();
+        }
     }
 }

@@ -35,5 +35,7 @@
         <DatePicker x:Name="date_Birthday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,193,0,0" Height="30" Width="246"/>
         <RadioButton x:Name="rbtn_Female" Content="Female" HorizontalAlignment="Left" Margin="175,266,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbtn_Male" Content="Male" HorizontalAlignment="Left" Margin="246,266,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_rBack" Content="← Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="49" Click="btn_rBack_Click"/>
+
     </Grid>
 </Window>

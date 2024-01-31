@@ -45,5 +45,11 @@ namespace Student_Information_System
                 tbx_username.Text = "";
             }
         }
+
+        private void btn_Lback_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new MainWindow().Show();
+        }
     }
 }

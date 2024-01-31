@@ -19,6 +19,7 @@
         <TextBox x:Name="tbx_username" HorizontalAlignment="Center" Height="30" Margin="0,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"/>
         <PasswordBox x:Name="tbx_password" HorizontalAlignment="Center" Height="30" Margin="0,196,0,0" VerticalAlignment="Top" Width="256"/>
         <Label Content="Authorized Account" HorizontalAlignment="Center" Height="50" Margin="0,36,0,0" VerticalAlignment="Top" Width="228" FontSize="25" FontFamily="Candara" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btn_Lback" Content="← Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="45" Click="btn_Lback_Click"/>
 
     </Grid>
 </Window>

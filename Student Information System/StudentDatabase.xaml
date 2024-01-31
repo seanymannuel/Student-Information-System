@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Student_Information_System"
         mc:Ignorable="d"
-        Title="StudentDatabase" Height="757" Width="1489">
+        Title="StudentDatabase" Height="684" Width="1124">
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
             <RadialGradientBrush>
@@ -15,60 +15,64 @@
                 <GradientStop Color="#FFBADCE7" Offset="0.963"/>
             </RadialGradientBrush>
         </Grid.Background>
-        <DataGrid HorizontalAlignment="Left" Height="644" Margin="758,0,0,0" VerticalAlignment="Center" Width="685" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Label Content="PERSONAL DATA" HorizontalAlignment="Left" Margin="33,62,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
-        <Label Content="Last Name:" Margin="36,97,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <Label Content="First Name:" HorizontalAlignment="Left" Margin="36,129,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="36,161,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Birthday:" HorizontalAlignment="Left" Margin="36,193,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Age:" HorizontalAlignment="Left" Margin="371,99,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Gender:" HorizontalAlignment="Left" Margin="371,131,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Home Address:" HorizontalAlignment="Left" Margin="371,162,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="371,193,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_dbLastName" HorizontalAlignment="Left" Margin="141,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <DatePicker x:Name="date_dbBirthday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="141,191,0,0" Height="30" Width="213"/>
-        <RadioButton x:Name="rbtn_dbFemale" Content="Female" HorizontalAlignment="Left" Margin="488,139,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rbtn_dbMale" Content="Male" HorizontalAlignment="Left" Margin="555,139,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbx_dbFirstName" HorizontalAlignment="Left" Margin="141,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbMiddleName" HorizontalAlignment="Left" Margin="141,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbAge" HorizontalAlignment="Left" Margin="479,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbAddress" HorizontalAlignment="Left" Margin="479,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbContactNumber" HorizontalAlignment="Left" Margin="479,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <Label Content="FAMILY DATA" HorizontalAlignment="Left" Margin="35,248,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
-        <Label Content="Mother's Name:" Margin="36,281,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <Label Content="Occupation:" HorizontalAlignment="Left" Margin="36,313,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="36,345,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <Label Content="Father's Name:" Margin="371,280,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_dbMothersName" HorizontalAlignment="Left" Margin="141,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbMotherOccupation" HorizontalAlignment="Left" Margin="141,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbMotherContact" HorizontalAlignment="Left" Margin="141,345,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <TextBox x:Name="tbx_dbFathersName" HorizontalAlignment="Left" Margin="476,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Height="26"/>
-        <Label Content="Occupation:" Margin="371,312,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_dbFatherOccupation" HorizontalAlignment="Left" Margin="476,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Height="26"/>
-        <Label Content="Contact Number:" Margin="371,345,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_dbFatherContact" HorizontalAlignment="Left" Margin="476,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Height="26"/>
-        <Label Content="SIBLINGS DATA" HorizontalAlignment="Left" Margin="35,386,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
-        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="36,416,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_dbSiblingLname" HorizontalAlignment="Left" Margin="141,416,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <Label Content="First Name:" HorizontalAlignment="Left" Margin="36,447,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_dbSiblingFname" HorizontalAlignment="Left" Margin="141,447,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="36,479,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_dbSiblingMname" HorizontalAlignment="Left" Margin="141,479,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <Label Content="Age:" Margin="371,416,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_dbSiblingAge" HorizontalAlignment="Left" Margin="475,416,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" Height="26"/>
-        <Label Content="Gender:" Margin="371,447,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <RadioButton x:Name="rbtn_dbFemale1" Content="Female" HorizontalAlignment="Left" Margin="488,451,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rbtn_dbMale1" Content="Male" HorizontalAlignment="Left" Margin="555,451,0,0" VerticalAlignment="Top"/>
-        <Label Content="IN CASE OF EMERGENCY" HorizontalAlignment="Left" Margin="35,531,0,0" VerticalAlignment="Top" Width="193" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
-        <Label Content="Guardian Name:" HorizontalAlignment="Left" Margin="36,563,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_dbGuardianName" HorizontalAlignment="Left" Margin="141,563,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <Label Content="Guardian Address:" HorizontalAlignment="Left" Margin="36,595,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
-        <TextBox x:Name="tbx_dbGuardianAddress" HorizontalAlignment="Left" Margin="141,595,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="26"/>
-        <Label Content="Relationship:" Margin="371,562,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_dbRelationship" HorizontalAlignment="Left" Margin="475,562,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" Height="26"/>
-        <Label Content="Contact Number:" Margin="371,593,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
-        <TextBox x:Name="tbx_dbGuardianContact" HorizontalAlignment="Left" Margin="475,593,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217" Height="26"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="227,654,0,0" VerticalAlignment="Top" Height="38" Width="291"/>
-        <Label Content="Student Registration Form" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="240" FontFamily="Candara" FontSize="20" FontWeight="Bold" Height="34"/>
+        <Label Content="PERSONAL DATA" HorizontalAlignment="Left" Margin="31,54,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="26"/>
+        <Label Content="Last Name:" Margin="35,88,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <Label Content="First Name:" HorizontalAlignment="Left" Margin="35,120,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="35,152,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Birthday:" HorizontalAlignment="Left" Margin="35,184,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="369,90,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Gender:" HorizontalAlignment="Left" Margin="369,122,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Home Address:" HorizontalAlignment="Left" Margin="369,153,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="369,184,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox x:Name="tbx_dbLastName" HorizontalAlignment="Left" Margin="139,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <DatePicker x:Name="date_dbBirthday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,182,0,0" Height="30" Width="214"/>
+        <RadioButton x:Name="rbtn_dbFemale" Content="Female" HorizontalAlignment="Left" Margin="487,130,0,0" VerticalAlignment="Top" GroupName="GenderGroup"/>
+        <RadioButton x:Name="rbtn_dbMale" Content="Male" HorizontalAlignment="Left" Margin="553,130,0,0" VerticalAlignment="Top" GroupName="GenderGroup"/>
+        <TextBox x:Name="tbx_dbFirstName" HorizontalAlignment="Left" Margin="139,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbMiddleName" HorizontalAlignment="Left" Margin="139,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbAge" HorizontalAlignment="Left" Margin="477,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbAddress" HorizontalAlignment="Left" Margin="477,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbContactNumber" HorizontalAlignment="Left" Margin="477,185,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <Label Content="FAMILY DATA" HorizontalAlignment="Left" Margin="33,239,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="27"/>
+        <Label Content="Mother's Name:" Margin="35,272,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <Label Content="Occupation:" HorizontalAlignment="Left" Margin="35,304,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Contact Number:" HorizontalAlignment="Left" Margin="35,336,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <Label Content="Father's Name:" Margin="369,272,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_dbMothersName" HorizontalAlignment="Left" Margin="139,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbMotherOccupation" HorizontalAlignment="Left" Margin="139,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbMotherContact" HorizontalAlignment="Left" Margin="139,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <TextBox x:Name="tbx_dbFathersName" HorizontalAlignment="Left" Margin="475,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Height="26"/>
+        <Label Content="Occupation:" Margin="369,304,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_dbFatherOccupation" HorizontalAlignment="Left" Margin="475,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Height="26"/>
+        <Label Content="Contact Number:" Margin="369,336,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_dbFatherContact" HorizontalAlignment="Left" Margin="475,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Height="26"/>
+        <Label Content="SIBLINGS DATA" HorizontalAlignment="Left" Margin="33,378,0,0" VerticalAlignment="Top" Width="114" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="26"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="35,408,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox x:Name="tbx_dbSiblingLname" HorizontalAlignment="Left" Margin="139,408,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <Label Content="First Name:" HorizontalAlignment="Left" Margin="35,438,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox x:Name="tbx_dbSiblingFname" HorizontalAlignment="Left" Margin="139,438,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="35,470,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox x:Name="tbx_dbSiblingMname" HorizontalAlignment="Left" Margin="139,470,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <Label Content="Age:" Margin="369,408,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_dbSiblingAge" HorizontalAlignment="Left" Margin="473,408,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="218" Height="26"/>
+        <Label Content="Gender:" Margin="369,438,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <RadioButton x:Name="rbtn_dbFemale1" Content="Female" HorizontalAlignment="Left" Margin="487,442,0,0" VerticalAlignment="Top" GroupName="SiblingGenderGroup"/>
+        <RadioButton x:Name="rbtn_dbMale1" Content="Male" HorizontalAlignment="Left" Margin="553,442,0,0" VerticalAlignment="Top" GroupName="SiblingGenderGroup"/>
+        <Label Content="IN CASE OF EMERGENCY" HorizontalAlignment="Left" Margin="33,522,0,0" VerticalAlignment="Top" Width="194" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="28"/>
+        <Label Content="Guardian Name:" HorizontalAlignment="Left" Margin="35,554,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox x:Name="tbx_dbGuardianName" HorizontalAlignment="Left" Margin="139,554,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <Label Content="Guardian Address:" HorizontalAlignment="Left" Margin="35,586,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100"/>
+        <TextBox x:Name="tbx_dbGuardianAddress" HorizontalAlignment="Left" Margin="139,586,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="26"/>
+        <Label Content="Relationship:" Margin="369,554,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_dbRelationship" HorizontalAlignment="Left" Margin="473,554,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="218" Height="26"/>
+        <Label Content="Contact Number:" Margin="369,584,0,0" VerticalAlignment="Top" Background="#FFE2E2E2" Width="100" HorizontalAlignment="Left" Foreground="Black"/>
+        <TextBox x:Name="tbx_dbGuardianContact" HorizontalAlignment="Left" Margin="473,584,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="218" Height="26"/>
+        <Button x:Name="btn_Update" Content="Update" HorizontalAlignment="Left" Margin="723,580,0,0" VerticalAlignment="Top" Height="22" Width="132" Click="btn_Update_Click"/>
+        <Label Content="Student Information" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="240" FontFamily="Candara" FontSize="20" FontWeight="Bold" Height="34"/>
+        <ListBox x:Name="ListBox_Students" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="723,93,117,99" SelectionChanged="ListBox_Students_SelectionChanged"/>
+        <TextBox x:Name="tbx_Search" HorizontalAlignment="Left" Height="24" Margin="860,579,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" TextChanged="tbx_Search_TextChanged"/>
+        <Label Content="STUDENT ID" HorizontalAlignment="Left" Margin="723,67,0,0" VerticalAlignment="Top" Width="83" FontFamily="Candara" FontSize="14" FontWeight="Bold" Height="26"/>
+        <Button x:Name="btn_Clear" Content="Clear" HorizontalAlignment="Left" Height="23" Margin="967,580,0,0" VerticalAlignment="Top" Width="40" Click="btn_Clear_Click"/>
+        <Button x:Name="btn_Back" Content="← Back" HorizontalAlignment="Left" Margin="20,12,0,0" VerticalAlignment="Top" Width="49" Click="btn_Back_Click"/>
     </Grid>
 </Window>
